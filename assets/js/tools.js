@@ -8,7 +8,11 @@ const qt = document.querySelectorAll.bind(document);
 
 // Remove grammar checked (inputs)
 
-qt('input').forEach((e) => e.setAttribute('spellcheck', false));
+qt('input').forEach((e) => {
+	e.setAttribute('spellcheck', false);
+	e.setAttribute('autocorrect', false);
+	e.setAttribute('autocapitalize', false);
+});
 
 //
 // Control labels
@@ -23,6 +27,7 @@ mainInputs.forEach((inp) => {
 	inp.addEventListener('focus', function () {
 		this.classList.add('active');
 	});
+	inp.addEventListener('load', () => updateLabelInput(inp));
 });
 
 function updateLabelInput(inp) {
@@ -36,35 +41,37 @@ function updateLabelInput(inp) {
 
 const objValidation = {
 	email: /^[a-zA-Z0-9_-]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/,
-	name: /^[a-zA-Z0-9]+/,
+	name: /^[a-zA-Z]([a-zA-Z0-9\s]+)?$/,
 };
 
 const passwordValidation = {
-	week: {
-		reg: /(?=^.{7,}$)/,
-		color: 'red',
-		text: 'Week',
-	},
-	short: {
-		reg: /(?=^.{1,7}$)/,
+	0: {
 		color: 'grey',
 		text: 'Too short',
 	},
-	medium: {
-		reg: /(?=^.{8,}$)(?=.*[a-z])(?=.*[0-9]).*/,
+	1: {
+		color: 'red',
+		text: 'Week',
+	},
+	2: {
 		color: 'rgb(163, 147, 0)',
 		text: 'Medium',
 	},
-	strong: {
-		reg: /(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).*/,
+	3: {
 		color: 'darkgreen',
 		text: 'Strong',
 	},
-	veryStrong: {
-		reg: /(?=^.{8,}$)(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[^A-Za-z0-9]).*/,
+	4: {
 		color: 'green',
 		text: 'Very strong',
 	},
+};
+
+const testPassword = {
+	lower: /(?=^.{7,}$)(?=.*[a-z])/,
+	upper: /(?=^.{7,}$)(?=.*[A-Z])/,
+	number: /(?=^.{7,}$)(?=.*[0-9])/,
+	symbol: /(?=^.{7,}$)(?=.*[^A-Za-z0-9])/,
 };
 
 // Functions

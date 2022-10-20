@@ -90,7 +90,6 @@ nextStep2Btn.addEventListener('click', () => {
 
 function prevStep() {
 	active--;
-	console.log(active);
 	updateProgressBar();
 	updateStepIcons();
 
@@ -104,7 +103,6 @@ function prevStep() {
 
 function nextStep() {
 	active++;
-	console.log(active);
 	updateProgressBar();
 	updateStepIcons();
 
@@ -239,16 +237,12 @@ passInp.addEventListener('input', function () {
 });
 
 function passwordStrength(value) {
-	let p = passwordValidation;
-	let arr = Object.keys(p).reverse();
-	for (let i = 0; i < arr.length; i++) {
-		let e = arr[i];
-		const { reg } = p[e];
-		if (reg.test(value)) {
-			return p[e];
-		}
+	let result = 0;
+	for (let i in testPassword) {
+		let reg = testPassword[i];
+		result += reg.test(value);
 	}
-	return { text: '' };
+	return passwordValidation[result];
 }
 
 // Update error messages

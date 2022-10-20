@@ -155,13 +155,6 @@ margin-bottom: var(--input-bottom-gap);
     flex-direction: column;
 }
 
-@media screen and (max-width: 768px) {
-    .signup-wrapper form {
-        flex-grow: 0 !important;
-        display: initial ! important;
-    }
-}
-
 header {
     background-color: var(--bg-500);
 }

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<!-- Box icons v2.1.4 -->
+		<link
+			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+			rel="stylesheet" />
+		<!-- Css files -->
+		<link
+			rel="stylesheet"
+			href="../assets/css/page.css" />
+		<link
+			rel="stylesheet"
+			href="../assets/css/form.css" />
+		<link
+			rel="stylesheet"
+			href="../assets/css/animation.css" />
+		<!-- JS files -->
+		<script
+			defer
+			src="../assets/js/tools.js"></script>
+		<script
+			defer
+			src="../assets/js/signup.js"></script>
+		<title>Register</title>
+	</head>
+	<body>
+		<div class="signup-wrapper">
+			<!-- ======== Header ========== -->
+
+			<header>
+				<div class="container">
+					<ul
+						class="steps-menu"
+						aria-label="Steps progress">
+						<div class="progress-container">
+							<div id="progress"></div>
+						</div>
+
+						<li class="step-item"><i class="bx bx-user"></i></li>
+						<li class="step-item"><i class="bx bx-envelope"></i></li>
+						<li class="step-item"><i class="bx bx-lock"></i></li>
+					</ul>
+				</div>
+			</header>
+
+			<!-- ======== Sign up form ========== -->
+
+			<form
+				autocapitalize="off"
+				autocomplete="off"
+				id="sign-up"
+				action=""
+				method="post">
+				<div class="container">
+					<!-- Step 1: Full name -->
+					<div class="step step1">
+						<p class="description">Step 1 of 3</p>
+						<h3 class="main-title">What's your name?</h3>
+
+						<!-- First name input -->
+
+						<div class="field">
+							<div class="input-container">
+								<input
+									data-reg="name"
+									type="text"
+									name="name"
+									id="name"
+									class="main-input" />
+								<label
+									for="name"
+									class="main-label"
+									>First Name</label
+								>
+							</div>
+							<p class="error-field"></p>
+						</div>
+
+						<!-- Last name input -->
+
+						<div class="field">
+							<div class="input-container">
+								<input
+									data-reg="name"
+									type="text"
+									name="surname"
+									id="surname"
+									class="main-input" />
+								<label
+									for="surname"
+									class="main-label"
+									>Last Name</label
+								>
+							</div>
+							<p class="error-field"></p>
+						</div>
+
+						<div class="footer-btns">
+							<a
+								href="../login/index.html"
+								class="main-link"
+								>Log in</a
+							>
+							<button
+								class="main-btn sm-btn"
+								role="button"
+								id="step1-btn"
+								type="button"
+								aria-label="Next step">
+								Next
+							</button>
+						</div>
+					</div>
+					<!-- Step 2: Email -->
+					<div class="step step2 hidden">
+						<p class="description">Step 2 of 3</p>
+						<h3 class="main-title">Choose an email</h3>
+
+						<!-- Email input -->
+
+						<div class="field">
+							<div class="input-container">
+								<input
+									data-reg="email"
+									type="email"
+									name="email"
+									id="email"
+									class="main-input" />
+								<label
+									for="email"
+									class="main-label"
+									>Email</label
+								>
+							</div>
+							<p class="error-field"></p>
+						</div>
+
+						<div class="footer-btns">
+							<a
+								href="../login/index.html"
+								class="main-link"
+								>Log in</a
+							>
+							<div class="control-btns">
+								<button
+									class="secondary-btn sm-btn back-btn"
+									role="button"
+									type="button"
+									aria-label="Previous step">
+									Back
+								</button>
+								<button
+									class="main-btn sm-btn"
+									id="step2-btn"
+									role="button"
+									type="button"
+									aria-label="Next step">
+									Next
+								</button>
+							</div>
+						</div>
+					</div>
+					<!-- Step 3: Password -->
+					<div class="step step3 hidden">
+						<p class="description">Step 3 of 3</p>
+						<h3 class="main-title">Create a password</h3>
+
+						<!-- Password input -->
+
+						<div class="field">
+							<div class="input-container">
+								<input
+									type="password"
+									name="password"
+									id="password"
+									class="main-input" />
+								<label
+									for="password"
+									class="main-label"
+									>Password</label
+								>
+							</div>
+							<p id="pass-strength">Password strength:</p>
+						</div>
+
+						<!-- Last name input -->
+
+						<div class="field">
+							<div class="input-container">
+								<input
+									type="password"
+									name="confirm-password"
+									id="confirm"
+									class="main-input" />
+								<label
+									for="confirm"
+									class="main-label"
+									>Confirm</label
+								>
+							</div>
+							<p class="error-field"></p>
+						</div>
+
+						<div class="footer-btns">
+							<a
+								href="../login/index.html"
+								class="main-link"
+								>Log in</a
+							>
+							<div class="control-btns">
+								<button
+									class="secondary-btn sm-btn back-btn"
+									role="button"
+									type="button"
+									aria-label="Previous step">
+									Back
+								</button>
+								<button
+									class="main-btn sm-btn"
+									id="step3-btn"
+									role="button"
+									type="submit"
+									aria-label="Next step">
+									Create account
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>
