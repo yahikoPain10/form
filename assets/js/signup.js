@@ -178,7 +178,7 @@ const confirmPass = q('.step3 #confirm');
 
 form.addEventListener('submit', function (e) {
 	e.preventDefault();
-	let validation = step3Validation();
+	let validation = step3Validation() && step2Validation() && step1Validation();
 	if (validation) form.submit();
 });
 
