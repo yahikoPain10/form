@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta
+			http-equiv="X-UA-Compatible"
+			content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1.0" />
+		<!-- Css files -->
+		<link
+			rel="stylesheet"
+			href="../assets/css/page.css" />
+		<link
+			rel="stylesheet"
+			href="../assets/css/form.css" />
+		<!-- JS files -->
+		<script
+			defer
+			src="../assets/js/tools.js"></script>
+		<script
+			defer
+			src="../assets/js/login.js"></script>
+		<title>Log in</title>
+	</head>
+	<body>
+		<div class="login-wrapper">
+			<div class="container">
+				<h3 class="main-title">Welcome back</h3>
+				<!-- form validation -->
+
+				<div
+					id="error-form"
+					class="error-form hidden">
+					Incorrect email or password
+				</div>
+
+				<!-- ======== Log in form ========== -->
+
+				<form
+					action=""
+					method="post">
+					<!-- Email input -->
+					<div class="field">
+						<div class="input-container">
+							<input
+								type="email"
+								name="email"
+								id="email"
+								class="main-input" />
+							<label
+								for="email"
+								class="main-label"
+								>Email</label
+							>
+						</div>
+					</div>
+
+					<!-- Password input -->
+					<div class="field">
+						<div class="input-container">
+							<input
+								class="main-input"
+								type="password"
+								name="password"
+								id="password" />
+							<label
+								for="password"
+								class="main-label"
+								>Password</label
+							>
+						</div>
+					</div>
+
+					<!-- Submit btn -->
+					<input
+						type="submit"
+						value="Log in"
+						role="button"
+						class="main-btn"
+						id="login-btn" />
+				</form>
+
+				<!-- form footer -->
+				<p class="form-footer">
+					Don't have an account?
+					<a
+						href="../signup/index.html"
+						class="main-link"
+						>Sign up</a
+					>
+				</p>
+			</div>
+		</div>
+	</body>
+</html>
