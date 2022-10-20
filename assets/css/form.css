@@ -157,7 +157,8 @@ margin-bottom: var(--input-bottom-gap);
 
 @media screen and (max-width: 768px) {
     .signup-wrapper form {
-        flex-grow: 0;
+        flex-grow: 0 !important;
+        display: initial ! important;
     }
 }
 
